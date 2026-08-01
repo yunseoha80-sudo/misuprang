@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+    <link href="https://fonts.googleapis.com/css2?family=Poor+Story&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🌳 우푸의 레스토랑 영상 보기 🌳</title>
+    <style>
+     body{
+
+    margin:0;
+
+    min-height:100vh;
+
+    background-image:url("woopu background.png");
+
+    background-size:cover;
+
+    background-position:center;
+
+    background-repeat:no-repeat;
+
+    font-family: "Poor Story", cursive;
+
+    }
+    section{
+    margin-left:80px;
+}
+body{
+    margin: 0;
+    min-height: 100vh;
+
+    background-image: url("woopu background.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    font-family: "Poor Story", cursive;
+}
+h1{
+    margin: 0;
+    padding-top: 30px;
+    text-align: center;
+    font-size: 42px;
+}
+.video-frame{
+
+    width: 960px;
+
+    margin: 40px auto 0 auto;
+
+    padding: 18px;
+
+    background: #FDFDF8;
+
+    border: 8px solid #8BD067;
+
+    border-radius: 30px;
+
+    box-shadow: 0 12px 30px rgba(0,0,0,0.2);
+
+
+
+}
+.video-frame video{
+
+    width:100%;
+
+    aspect-ratio:16/9;
+
+    border-radius:20px;
+
+    display:block;
+
+}
+.home-button{
+
+    position: fixed;
+
+    right: 10px;
+
+    bottom : 30px;
+}
+.home-button a{
+
+    display:inline-block;
+
+    text-decoration:none;
+
+    background:#FDFDF8;
+
+    color:#78C35D;
+
+    font-family:"Poor Story", cursive;
+
+    font-size:24px;
+
+    padding:15px 35px;
+
+    border-radius:40px;
+
+    transition:0.3s;
+
+}
+.home-button a:hover{
+
+    transform:translateY(-5px);
+
+    background:#FDFDF8;
+
+
+}
+img,
+video{
+    max-width: 100%;
+    height: auto;
+}
+.video-frame{
+    width: min(960px, 90%);
+    margin: 40px auto;
+}
+ </style>
+ <div class="home-button">
+
+    <a href="booth.html">
+         ➔이전으로
+    </a>
+ </div>
+
+    <h1>🎬 우푸 레스토랑 영상 보기 🎬</h1>
+
+    <div class="video-container">
+ </div>
+    <div class="video-frame">
+    <video controls>
+        <source src="woopu video.mp4" type="video/mp4">
+        브라우적 영상을 지원하지 않습니다. 
+    </video>
+</div>
+
+</html>
+
