@@ -73,7 +73,32 @@
             grid-template-columns: repeat(4, 1fr);
             gap: 25px;
         }
+.news-card:hover{
+    animation: card-wiggle 0.4s ease-in-out;
+    cursor: pointer;
+}
 
+@keyframes card-wiggle{
+    0%{
+        transform: rotate(-1deg);
+    }
+
+    25%{
+        transform: rotate(-2deg) translateY(-4px);
+    }
+
+    50%{
+        transform: rotate(1deg) translateY(-6px);
+    }
+
+    75%{
+        transform: rotate(-2deg) translateY(-4px);
+    }
+
+    100%{
+        transform: rotate(-1deg);
+    }
+}
        .news-card{
     position: relative;
 
@@ -523,108 +548,151 @@
             </p>
         </section>
 <section class="board">
-        <section class="news-container">
 
-            <article class="news-card">
-                <div class="preview-box">
-    <img
-        src="appetizer-preview1.png"
-        alt="농산물 피해 관련 자료"
-        class="preview-image"
-    >
+    <section class="news-container">
 
-    <button
-        type="button"
-        class="more-button"
-        onclick="openImage('appetizer1.png')"
-        aria-label="사진 크게 보기"
-    >
-        ＋
-    </button>
-</div>
+        <!-- 첫 번째 카드 -->
+        <article
+            class="news-card"
+            onclick="openCardLink('https://www.idaegu.com/news/articleView.html?idxno=633557')"
+            role="link"
+            tabindex="0"
+        >
+            <div class="preview-box">
 
-                <h3>경북 산불 피해 농작물, 89.5%가 사과원</h3>
+                <img
+                    src="appetizer-preview1.png"
+                    alt="농산물 피해 관련 자료"
+                    class="preview-image"
+                >
 
-                <p>
-                    강풍을 타고 번진 불길이 의성·안동 등 국내 주요 사과 산지를 그대로 관통했어요.
-               </p>
-            </article>
+                <button
+                    type="button"
+                    class="more-button"
+                    onclick="event.stopPropagation(); openImage('appetizer1.png')"
+                    aria-label="사진 크게 보기"
+                >
+                    ＋
+                </button>
 
-            <article class="news-card">
-                <div class="preview-box">
-     <img
-        src="appetizer-preview2.png"
-        alt="농산물 피해 관련 자료"
-        class="preview-image"
-    >
+            </div>
 
-    <button
-        type="button"
-        class="more-button"
-        onclick="openImage('appetizer2.png')"
-        aria-label="사진 크게 보기"
-    >
-        ＋
-    </button>
-    </div>
+            <h3>경북 산불 피해 농작물, 89.5%가 사과원</h3>
 
-                <h3>전국 사과 62% 재배지 경북, 과수원 3,701ha 소실</h3>
+            <p>
+                강풍을 타고 번진 불길이 의성·안동 등 국내 주요 사과 산지를
+                그대로 관통했어요.
+            </p>
+        </article>
 
-                <p>
-                    전국 사과 생산의 62%를 차지하는 경북에서 대규모 과수원이 사라지며 수급 불안 우려가 나와요.
-                </p>
-            </article>
 
-            <article class="news-card">
-                <div class="preview-box">
-                 <img
-        src="appetizer-preview3.png"
-        alt="산불과 기후위기 관련 자료"
-        class="preview-image"
-    >
+        <!-- 두 번째 카드 -->
+        <article
+            class="news-card"
+            onclick="openCardLink('https://www.khan.co.kr/article/202504072034005')"
+            role="link"
+            tabindex="0"
+        >
+            <div class="preview-box">
 
-    <button
-        type="button"
-        class="more-button"
-        onclick="openImage('appetizer3.png')"
-        aria-label="사진 크게 보기"
-    >
-        ＋
-    </button>
-    </div>
+                <img
+                    src="appetizer-preview3.png"
+                    alt="경북 과수원 피해 관련 자료"
+                    class="preview-image"
+                >
 
-                <h3>소나무 숲 훼손에, 송이버섯 자취 감춰</h3>
+                <button
+                    type="button"
+                    class="more-button"
+                    onclick="event.stopPropagation(); openImage('appetizer2.png')"
+                    aria-label="사진 크게 보기"
+                >
+                    ＋
+                </button>
 
-                <p>
-                    소나무와 공생하는 송이버섯은 숲이 사라지자 자라날 자리 자체를 잃었어요. 그러자 극심한 품귀 현상이 벌어졌답니다.
-                </p>
-            </article>
+            </div>
 
-            <article class="news-card">
-                <div class="preview-box">
-           <img
-        src="appetizer-preview4.png"
-        alt="산불 피해 지역 생활 관련 자료"
-        class="preview-image"
-    >
+            <h3>전국 사과 62% 재배지 경북, 과수원 3,701ha 소실</h3>
 
-    <button
-        type="button"
-        class="more-button"
-        onclick="openImage('appetizer4.png')"
-        aria-label="사진 크게 보기"
-    >
-        ＋
-    </button>
-</div>
-                <h3>사과·마늘 주산지 강타, 소매가 동반 상승</h3>
+            <p>
+                전국 사과 생산의 62%를 차지하는 경북에서 대규모 과수원이
+                사라지며 수급 불안 우려가 나와요.
+            </p>
+        </article>
 
-                <p>
-                    산불 피해 지역이 전국 사과(73.2%)·마늘(49.0%) 생산 절반을 차지하며 가격이 동시에 뛰었어요.
-                </p>
-            </article>
 
-        </section>
+        <!-- 세 번째 카드 -->
+        <article
+            class="news-card"
+            onclick="openCardLink('https://www.wikitree.co.kr/articles/1086370')"
+            role="link"
+            tabindex="0"
+        >
+            <div class="preview-box">
+
+                <img
+                    src="appetizer-preview2.png"
+                    alt="송이버섯 피해 관련 자료"
+                    class="preview-image"
+                >
+
+                <button
+                    type="button"
+                    class="more-button"
+                    onclick="event.stopPropagation(); openImage('appetizer3.png')"
+                    aria-label="사진 크게 보기"
+                >
+                    ＋
+                </button>
+
+            </div>
+
+            <h3>소나무 숲 훼손에, 송이버섯 자취 감춰</h3>
+
+            <p>
+                소나무와 공생하는 송이버섯은 숲이 사라지자 자라날 자리 자체를
+                잃었어요. 그러자 극심한 품귀 현상이 벌어졌답니다.
+            </p>
+        </article>
+
+
+        <!-- 네 번째 카드 -->
+        <article
+            class="news-card"
+            onclick="openCardLink('https://biz.newdaily.co.kr/site/data/html/2025/03/31/2025033100161.html')"
+            role="link"
+            tabindex="0"
+        >
+            <div class="preview-box">
+
+                <img
+                    src="appetizer-preview4.png"
+                    alt="사과와 마늘 가격 상승 관련 자료"
+                    class="preview-image"
+                >
+
+                <button
+                    type="button"
+                    class="more-button"
+                    onclick="event.stopPropagation(); openImage('appetizer4.png')"
+                    aria-label="사진 크게 보기"
+                >
+                    ＋
+                </button>
+
+            </div>
+
+            <h3>사과·마늘 주산지 강타, 소매가 동반 상승</h3>
+
+            <p>
+                산불 피해 지역이 전국 사과(73.2%)·마늘(49.0%) 생산의 큰 비중을
+                차지하면서 가격이 동시에 뛰었어요.
+            </p>
+        </article>
+
+    </section>
+
+</section>
 
     </main>
 
@@ -717,6 +785,15 @@
 
         modal.classList.remove("show");
     }
+    function openCardLink(url){
+
+    window.open(
+        url,
+        "_blank",
+        "noopener,noreferrer"
+    );
+
+}
     const faq = [
 
     {
