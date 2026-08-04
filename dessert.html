@@ -2,112 +2,525 @@
 <html lang="ko">
 
 <head>
-    <link href="https://fonts.googleapis.com/css2?family=Poor+Story&display=swap" rel="stylesheet">
-     <meta charset="UTF-8">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poor+Story&display=swap"
+        rel="stylesheet"
+    >
+
     <title>🤝 약숲해 🤝</title>
-     <style>
-     body{
 
-    margin:0;
+    <style>
+        *{
+            box-sizing: border-box;
+        }
 
-    min-height:100vh;
+        body{
+            margin: 0;
+            min-height: 100vh;
 
-    background-image:url("woopu background.png");
+            background-image: url("woopu background.png");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
 
-    background-size:cover;
+            font-family: "Poor Story", cursive;
+            color: #243124;
+        }
 
-    background-position:center;
+        img{
+            max-width: 100%;
+            height: auto;
+        }
 
-    background-repeat:no-repeat;
+        h1{
+            margin: 0;
+            padding: 30px 20px 0;
 
-    font-family: "Poor Story", cursive;
+            text-align: center;
+            font-size: 44px;
+        }
 
-    }
-    section{
-    margin-left:80px;
-}
-body{
-    margin: 0;
-    min-height: 100vh;
+        .page-container{
+            width: 100%;
+            padding-bottom: 120px;
+        }
 
-    background-image: url("woopu background.png");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+        /* 메뉴판 + 영수증 영역 */
+        .promise-container{
+            display: flex;
+            justify-content: center;
+            align-items: stretch;
 
-    font-family: "Poor Story", cursive;
-}
-h1{
-    margin: 0;
-    padding-top: 30px;
+            gap: 55px;
+
+            width: min(1450px, 92%);
+            margin: 45px auto 55px;
+        }
+
+        .promise-box{
+            width: 50%;
+            min-height: 700px;
+
+            padding: 35px;
+
+            background: rgba(255, 255, 255, 0.84);
+
+            border: 5px solid #8BD067;
+            border-radius: 35px;
+
+            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.14);
+        }
+
+        .promise-box h2{
+            width: 100%;
+            margin: 0 0 28px;
+
+            text-align: center;
+            font-size: 32px;
+            line-height: 1.4;
+
+            color: #39723A;
+        }
+
+        /* 왼쪽 메뉴판 */
+        .menu-image-box{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            width: 100%;
+            height: 590px;
+
+            overflow: hidden;
+        }
+
+        .menu-image{
+            width: 100%;
+            height: 100%;
+
+            object-fit: contain;
+            display: block;
+        }
+
+        /* 오른쪽 영수증 */
+        .receipt-content{
+            min-height: 590px;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            padding: 30px;
+
+            background: #FFFDF6;
+
+            border: 3px dashed #8BD067;
+            border-radius: 25px;
+        }
+
+        .receipt-guide{
+            margin: 0;
+
+            text-align: center;
+            font-size: 25px;
+            line-height: 1.7;
+
+            color: #526452;
+        }
+
+        /* 미래 뉴스 전체 영역 */
+        .future-section{
+            width: min(1450px, 92%);
+            margin: 0 auto;
+        }
+
+        .future-heading{
+            margin: 0 0 18px;
+
+            text-align: center;
+            font-size: 40px;
+            color: #39723A;
+        }
+
+        .future-text{
+            margin: 0 0 35px;
+
+            text-align: center;
+            font-size: 24px;
+            line-height: 1.7;
+        }
+
+        /* 코르크판 */
+        .future-board{
+            position: relative;
+
+            padding: 55px;
+
+            background-color: #B98A55;
+
+            border: 12px solid #8B5A2B;
+            border-radius: 30px;
+
+            box-shadow:
+                inset 0 0 28px rgba(90, 50, 20, 0.28),
+                0 15px 30px rgba(0, 0, 0, 0.18);
+        }
+
+        /* 게시판 안 종이 */
+        .future-paper{
+            position: relative;
+
+            width: min(1050px, 100%);
+            margin: 0 auto;
+
+            padding: 34px;
+
+            background: #FFF9E8;
+
+            border-radius: 5px;
+
+            box-shadow: 0 10px 18px rgba(66, 38, 16, 0.25);
+
+            transform: rotate(-0.5deg);
+        }
+
+        /* 테이프 */
+        .future-paper::before{
+            content: "";
+
+            position: absolute;
+
+            top: -22px;
+            left: 50%;
+
+            width: 140px;
+            height: 40px;
+
+            transform: translateX(-50%) rotate(-2deg);
+
+            background: rgba(255, 238, 174, 0.8);
+
+            border-left: 1px solid rgba(190, 160, 90, 0.35);
+            border-right: 1px solid rgba(190, 160, 90, 0.35);
+
+            box-shadow: 0 3px 7px rgba(0, 0, 0, 0.13);
+
+            z-index: 2;
+        }
+
+        .future-image-box{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            width: 100%;
+        }
+
+        .future-image{
+            width: 100%;
+            display: block;
+
+            object-fit: contain;
+
+            border-radius: 8px;
+
+            box-shadow: 0 7px 15px rgba(0, 0, 0, 0.15);
+        }
+
+        /* 이전 버튼 */
+        .home-button{
+            position: fixed;
+
+            right: 30px;
+            bottom: 30px;
+
+            z-index: 50;
+        }
+
+        .home-button a{
+            display: inline-block;
+
+            padding: 15px 35px;
+
+            background: #FDFDF8;
+            color: #78C35D;
+
+            border: 3px solid #8BD067;
+            border-radius: 40px;
+
+            text-decoration: none;
+
+            font-size: 24px;
+
+            transition: 0.3s;
+        }
+
+        .home-button a:hover{
+            transform: translateY(-5px);
+
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.16);
+        }
+
+        /* 태블릿 및 모바일 */
+        @media (max-width: 900px){
+
+            h1{
+                font-size: 36px;
+            }
+
+            .promise-container{
+                flex-direction: column;
+                align-items: center;
+
+                gap: 35px;
+
+                margin-top: 30px;
+            }
+
+            .promise-box{
+                width: 100%;
+                max-width: 680px;
+                min-height: auto;
+
+                padding: 25px;
+            }
+
+            .promise-box h2{
+                font-size: 28px;
+            }
+
+            .menu-image-box{
+                height: auto;
+                min-height: 420px;
+            }
+
+            .menu-image{
+                width: 100%;
+                height: auto;
+            }
+
+            .receipt-content{
+                min-height: 420px;
+            }
+
+            .future-heading{
+                font-size: 32px;
+            }
+
+            .future-text{
+                font-size: 21px;
+            }
+
+            .future-board{
+                padding: 38px 24px;
+                border-width: 9px;
+            }
+
+            .future-paper{
+                padding: 24px;
+            }
+        }
+
+        @media (max-width: 600px){
+
+            h1{
+                font-size: 32px;
+                padding-top: 22px;
+            }
+
+            .promise-container,
+            .future-section{
+                width: 90%;
+            }
+
+            .promise-box{
+                padding: 20px;
+            }
+
+            .promise-box h2{
+                font-size: 25px;
+            }
+
+            .menu-image-box{
+                min-height: 320px;
+            }
+
+            .receipt-content{
+                min-height: 340px;
+                padding: 22px;
+            }
+
+            .receipt-guide{
+                font-size: 20px;
+            }
+
+            .future-heading{
+                font-size: 28px;
+            }
+
+            .future-text{
+                font-size: 19px;
+            }
+
+            .future-board{
+                padding: 32px 16px;
+                border-width: 7px;
+            }
+
+            .future-paper{
+                padding: 18px;
+            }
+
+            .future-paper::before{
+                width: 100px;
+                height: 30px;
+                top: -16px;
+            }
+
+            .home-button{
+                right: 15px;
+                bottom: 15px;
+            }
+
+            .home-button a{
+                padding: 12px 22px;
+                font-size: 18px;
+            }
+        }
+        .future-header{
+    width: min(1100px, 92%);
+
+    margin: 0 auto 35px;
+    padding: 28px 35px;
+
+    background: rgba(255, 255, 255, 0.86);
+
+    border: 5px solid #8BD067;
+    border-radius: 30px;
+
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.13);
+
     text-align: center;
-    font-size: 42px;
 }
-.home-button{
+.future-heading{
+    margin: 0 0 18px;
 
-    position: fixed;
-
-    right: 30px;
-
-    bottom: 30px;
-
-
-
+    text-align: center;
+    font-size: 40px;
+    color: #39723A;
 }
 
-.home-button a{
+.future-text{
+    margin: 0;
 
-    display:inline-block;
+    text-align: center;
+    font-size: 24px;
+    line-height: 1.7;
 
-    text-decoration:none;
-
-    background:#FDFDF8;
-
-    color:#78C35D;
-
-    font-family:"Poor Story", cursive;
-
-    font-size:24px;
-
-    padding:15px 35px;
-
-    border-radius:40px;
-
-    transition:0.3s;
-
+    color: #243124;
 }
-.home-button a:hover{
-
-    transform:translateY(-5px);
-
-    background:#FDFDF8;
-
-
-}
-img,
-video{
-    max-width: 100%;
-    height: auto;
-}
-.video-frame{
-    width: min(960px, 90%);
-    margin: 40px auto;
-}
-
-</style>
+    </style>
+</head>
 
 <body>
-    <div class="home-button">
-
-    <a href="booth.html">
-         ➔이전으로
-    </a>
-
-</div>
 
     <h1>🤝 약숲해 🤝</h1>
 
-    
- </html>
+    <main class="page-container">
+
+        <!-- 위쪽: 메뉴판과 영수증 -->
+        <div class="promise-container">
+
+            <!-- 왼쪽 메뉴판 -->
+            <section class="promise-box menu-box">
+
+                <h2>
+                    메뉴를 보고 영수증에 적어주세요!
+                </h2>
+
+                <div class="menu-image-box">
+
+                    <img
+                        src="eco-menu.png"
+                        alt="친환경 실천 메뉴판"
+                        class="menu-image"
+                    >
+
+                </div>
+
+            </section>
+
+
+            <!-- 오른쪽 영수증 -->
+            <section class="promise-box receipt-box">
+
+                <h2>
+                    🧾 나의 실천 영수증 🧾
+                </h2>
+
+                <div class="receipt-content">
+
+                    <p class="receipt-guide">
+                        오늘 실천하고 싶은 행동을 골라<br>
+                        영수증에 작성해보세요!
+                    </p>
+
+                </div>
+
+            </section>
+
+        </div>
+
+
+        <!-- 아래쪽: 미래 뉴스 코르크판 -->
+        <section class="future-section">
+            <div class="future-header">
+
+            <h2 class="future-heading">
+                🌱 우리가 만든 미래 스크랩보드 🌱
+            </h2>
+
+            <p class="future-text">
+                숲을 지키기 위해 우리가 실천한 행동들이 모이면,<br>
+                미래에는 이런 세상이 될 수 있어요!
+            </p>
+            </div>
+
+            <div class="future-board">
+
+                <div class="future-paper">
+
+                    <div class="future-image-box">
+
+                        <img
+                            src="future-news.png"
+                            alt="숲을 지킨 미래의 긍정적인 뉴스"
+                            class="future-image"
+                        >
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <div class="home-button">
+
+        <a href="booth.html">
+            ➔ 이전으로
+        </a>
+
+    </div>
+
+</body>
+
+</html>
