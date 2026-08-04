@@ -141,6 +141,21 @@ video{
     width: min(960px, 90%);
     margin: 40px auto;
 }
+.footer-message{
+    position: fixed;
+
+    left: 30px;
+    bottom: 20px;
+
+    width: 520px;
+
+    font-size: 18px;
+    line-height: 1.6;
+
+    color: #2E5C32;
+
+    z-index: 999;
+}
 
 
 
@@ -171,12 +186,18 @@ video{
 </p>
 
     </div>
-    <script>
+    </div>
+    <div class="footer-message">
+   본 웹페이지에 사용된 캐릭터 '우푸'는 유한킴벌리 「우리강산 푸르게 푸르게」 캠페인의 공식 마스코트입니다. <br>
+   본 콘텐츠는 2026 그린캠프 전시 목적으로 제작되었음을 알려드립니다.
+</div>
+   <script>
     function toggleIntro() {
            const intro = document.getElementById("intro");
 intro.classList.toggle("show");
     }
-</script>
+</script>  
+
 </body>
 
 
