@@ -2,11 +2,6 @@
 <html lang="ko">
 
 <head>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Poor+Story&display=swap"
-        rel="stylesheet"
-    >
-
     <meta charset="UTF-8">
 
     <meta
@@ -14,12 +9,16 @@
         content="width=device-width, initial-scale=1.0"
     >
 
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poor+Story&display=swap"
+        rel="stylesheet"
+    >
+
     <title>
         🥩 잿더미 숲테이크 🥩 & 🍝 파릇파릇 바질 숲파게티 🍝
     </title>
 
     <style>
-
         *{
             box-sizing: border-box;
         }
@@ -52,11 +51,15 @@
             height: auto;
         }
 
-        h1{
-            width: 100%;
+        a{
+            font-family: "Poor Story", cursive;
+        }
 
-            margin: 0;
-            padding: 30px 20px 0;
+        h1{
+            width: min(1450px, 94%);
+
+            margin: 0 auto;
+            padding: 30px 20px 5px;
 
             text-align: center;
 
@@ -64,28 +67,21 @@
             line-height: 1.4;
         }
 
-        /* 전체 체험 영역 */
-        .experience-container{
+        /* 전체 페이지 */
+        .page-container{
             width: min(1450px, 94%);
 
-            display: flex;
-            justify-content: center;
-            align-items: flex-start;
-
-            gap: 50px;
-
             margin: 0 auto;
-            padding: 40px 0 120px;
+            padding: 40px 0 130px;
         }
 
-        /* 왼쪽·오른쪽 큰 박스 */
-        .experience-box{
-            flex: 1;
-            min-width: 0;
+        /* 본식 한 개 전체 상자 */
+        .course-box{
+            width: 100%;
 
-            padding: 30px;
+            padding: 35px;
 
-            background: rgba(255, 255, 255, 0.82);
+            background: rgba(255, 255, 255, 0.86);
 
             border-radius: 35px;
 
@@ -101,58 +97,58 @@
             border: 6px solid #8BD067;
         }
 
-        .experience-box h2{
-            margin: 0 0 30px;
+        .course-box h2{
+            margin: 0 0 32px;
 
             text-align: center;
 
-            font-size: 32px;
+            font-size: 36px;
             line-height: 1.4;
         }
 
-        /* 각 체험 카드 */
+        /* 체험 카드 3개 */
+        .experience-list{
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, minmax(0, 1fr));
+
+            gap: 25px;
+        }
+
         .experience-item{
-            width: 100%;
+            min-width: 0;
 
-            display: flex;
-            align-items: center;
+            padding: 20px;
 
-            gap: 24px;
+            background: rgba(255, 255, 255, 0.76);
 
-            margin-bottom: 25px;
-            padding: 18px;
+            border-radius: 25px;
 
-            background: rgba(255, 255, 255, 0.72);
-
-            border-radius: 24px;
+            box-shadow:
+                0 7px 18px rgba(0, 0, 0, 0.08);
         }
 
-        .experience-item:last-child{
-            margin-bottom: 0;
-        }
-
-        /* 리본과 사진 영역 */
         .experience-visual{
-            flex: 0 0 190px;
+            width: 100%;
 
             display: flex;
             flex-direction: column;
             align-items: center;
 
-            gap: 10px;
-
-            min-width: 0;
+            gap: 12px;
         }
 
-        /* 체험 제목 리본 */
+        /* 체험 제목 */
         .activity-tag{
             width: 100%;
+            min-height: 48px;
 
             display: flex;
             justify-content: center;
             align-items: center;
 
-            padding: 8px 10px;
+            padding: 9px 12px;
 
             background:
                 linear-gradient(
@@ -164,9 +160,9 @@
             color: white;
 
             border: 2px solid #78C35D;
-            border-radius: 14px;
+            border-radius: 15px;
 
-            font-size: 19px;
+            font-size: 20px;
             font-weight: bold;
             line-height: 1.3;
 
@@ -182,33 +178,156 @@
 
         /* 체험 사진 */
         .experience-visual img{
-            width: 190px;
-            height: 135px;
+            width: 100%;
+            height: auto;
+
+            aspect-ratio: 16 / 10;
 
             display: block;
 
             object-fit: cover;
 
-            border-radius: 18px;
-
-            flex-shrink: 0;
+            border-radius: 19px;
         }
 
         /* 체험 설명 */
         .experience-item p{
-            flex: 1;
-            min-width: 0;
-
-            margin: 0;
+            margin: 18px 0 0;
 
             font-size: 21px;
-            line-height: 1.6;
+            line-height: 1.65;
 
             word-break: keep-all;
             overflow-wrap: break-word;
         }
 
-        /* 이전으로 버튼 */
+        /* =====================================
+           본식 1과 본식 2 사이 우푸 설명
+        ===================================== */
+
+        .story-card{
+            position: relative;
+
+            width: min(1050px, 94%);
+
+            margin: 70px auto;
+        }
+
+        .story-image{
+            width: 100%;
+            height: auto;
+
+            display: block;
+
+            filter:
+                drop-shadow(
+                    0 14px 24px rgba(0, 0, 0, 0.18)
+                );
+        }
+
+        /*
+            tree-woopu.png의 중앙 크림색 말풍선 안에
+            글자와 흐름도를 배치합니다.
+        */
+        .story-content{
+            position: absolute;
+
+            left: 25%;
+            top: 30%;
+
+            width: 50%;
+            height: 57%;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            padding: 12px 22px;
+
+            text-align: center;
+        }
+
+        .story-intro{
+            margin: 0 0 9px;
+
+            color: #315D35;
+
+            font-size: clamp(15px, 1.25vw, 19px);
+            line-height: 1.4;
+
+            word-break: keep-all;
+        }
+
+        /* 산불 악순환 흐름 */
+        .story-flow{
+            width: 100%;
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            gap: 3px;
+
+            margin: 3px 0 8px;
+        }
+
+        .flow-step{
+            width: 100%;
+
+            padding: 6px 9px;
+
+            background: rgba(255, 248, 233, 0.82);
+
+            border: 2px dashed #C78455;
+            border-radius: 13px;
+
+            color: #4A4A3A;
+
+            font-size: clamp(13px, 1.05vw, 17px);
+            line-height: 1.25;
+
+            word-break: keep-all;
+        }
+
+        .flow-step span{
+            display: block;
+
+            margin-top: 2px;
+
+            font-size: 0.9em;
+        }
+
+        .flow-arrow{
+            color: #8B5A2B;
+
+            font-size: 17px;
+            line-height: 1;
+        }
+
+        .story-question{
+            margin: 0 0 4px;
+
+            color: #39723A;
+
+            font-size: clamp(16px, 1.35vw, 21px);
+            line-height: 1.25;
+            font-weight: bold;
+
+            word-break: keep-all;
+        }
+
+        .story-next{
+            margin: 0;
+
+            color: #4C8C42;
+
+            font-size: clamp(16px, 1.3vw, 20px);
+            line-height: 1.25;
+            font-weight: bold;
+        }
+
+        /* 이전 버튼 */
         .home-button{
             position: fixed;
 
@@ -229,7 +348,6 @@
             border: 3px solid #8BD067;
             border-radius: 40px;
 
-            font-family: "Poor Story", cursive;
             font-size: 24px;
             line-height: 1.2;
 
@@ -259,23 +377,77 @@
                 font-size: 36px;
             }
 
-            .experience-container{
-                flex-direction: column;
-                align-items: center;
-
-                width: 92%;
-
-                gap: 35px;
+            .experience-list{
+                grid-template-columns: 1fr;
             }
 
-            .experience-box{
-                width: 100%;
-                max-width: 760px;
+            .experience-item{
+                display: grid;
+
+                grid-template-columns:
+                    minmax(230px, 36%)
+                    minmax(0, 1fr);
+
+                align-items: center;
+
+                gap: 25px;
+            }
+
+            .experience-item p{
+                margin: 0;
+            }
+
+            .story-card{
+                width: min(850px, 96%);
+            }
+
+            .story-content{
+                left: 24%;
+                top: 29.5%;
+
+                width: 52%;
+                height: 58%;
+
+                padding: 7px 15px;
+            }
+
+            .story-intro{
+                margin-bottom: 5px;
+
+                font-size: 14px;
+                line-height: 1.3;
+            }
+
+            .story-flow{
+                gap: 2px;
+
+                margin: 2px 0 5px;
+            }
+
+            .flow-step{
+                padding: 4px 7px;
+
+                font-size: 12px;
+                line-height: 1.2;
+            }
+
+            .flow-arrow{
+                font-size: 13px;
+            }
+
+            .story-question{
+                margin-bottom: 3px;
+
+                font-size: 14px;
+            }
+
+            .story-next{
+                font-size: 14px;
             }
         }
 
         /* 모바일 */
-        @media (max-width: 768px){
+        @media (max-width: 700px){
 
             h1{
                 padding: 20px 14px 0;
@@ -284,45 +456,36 @@
                 line-height: 1.35;
             }
 
-            .experience-container{
-                width: calc(100% - 28px);
-
-                gap: 30px;
+            .page-container{
+                width: calc(100% - 24px);
 
                 padding-top: 25px;
-                padding-bottom: 100px;
+                padding-bottom: 110px;
             }
 
-            .experience-box{
-                width: 100%;
-
+            .course-box{
                 padding: 20px;
 
                 border-width: 5px;
                 border-radius: 28px;
             }
 
-            .experience-box h2{
+            .course-box h2{
                 margin-bottom: 22px;
 
-                font-size: 26px;
+                font-size: 27px;
+            }
+
+            .experience-list{
+                grid-template-columns: 1fr;
+
+                gap: 20px;
             }
 
             .experience-item{
-                flex-direction: column;
-                align-items: stretch;
-
-                gap: 15px;
+                display: block;
 
                 padding: 16px;
-
-                text-align: center;
-            }
-
-            .experience-visual{
-                flex: none;
-
-                width: 100%;
             }
 
             .activity-tag{
@@ -330,29 +493,94 @@
                 max-width: 100%;
 
                 margin: 0 auto;
-
                 padding: 8px 17px;
 
                 font-size: 18px;
             }
 
-            .experience-visual img{
-                width: 100%;
-                height: auto;
-
-                aspect-ratio: 16 / 9;
-            }
-
             .experience-item p{
+                margin-top: 15px;
+
                 font-size: 18px;
                 line-height: 1.6;
+            }
 
-                text-align: left;
+            /*
+                모바일에서도 tree-woopu.png 안에
+                글자가 유지되도록 카드 전체를 약간 확대합니다.
+            */
+            .story-card{
+                width: 112%;
+
+                left: 50%;
+                transform: translateX(-50%);
+
+                margin: 45px auto;
+            }
+
+            .story-content{
+                left: 23.5%;
+                top: 28.5%;
+
+                width: 53%;
+                height: 60%;
+
+                padding: 2px 6px;
+            }
+
+            .story-intro{
+                margin-bottom: 3px;
+
+                font-size: 7.5px;
+                line-height: 1.2;
+            }
+
+            .story-flow{
+                gap: 1px;
+
+                margin: 1px 0 3px;
+            }
+
+            .flow-step{
+                padding: 2px 3px;
+
+                border-width: 1px;
+                border-radius: 6px;
+
+                font-size: 6.5px;
+                line-height: 1.1;
+            }
+
+            .flow-step span{
+                margin-top: 1px;
+            }
+
+            .flow-arrow{
+                font-size: 7px;
+            }
+
+            .story-question{
+                margin-bottom: 1px;
+
+                font-size: 7.5px;
+                line-height: 1.15;
+            }
+
+            .story-next{
+                font-size: 7.5px;
+                line-height: 1.15;
             }
 
             .home-button{
-                right: max(12px, env(safe-area-inset-right));
-                bottom: max(12px, env(safe-area-inset-bottom));
+                right: max(
+                    12px,
+                    env(safe-area-inset-right)
+                );
+
+                bottom: max(
+                    12px,
+                    env(safe-area-inset-bottom)
+                );
             }
 
             .home-button a{
@@ -369,24 +597,24 @@
                 font-size: 26px;
             }
 
-            .experience-container{
-                width: calc(100% - 20px);
+            .page-container{
+                width: calc(100% - 18px);
             }
 
-            .experience-box{
-                padding: 16px;
+            .course-box{
+                padding: 15px;
             }
 
-            .experience-box h2{
+            .course-box h2{
                 font-size: 24px;
             }
 
             .experience-item{
-                padding: 14px;
+                padding: 13px;
             }
 
             .activity-tag{
-                padding: 7px 14px;
+                padding: 7px 13px;
 
                 font-size: 17px;
             }
@@ -395,13 +623,33 @@
                 font-size: 17px;
             }
 
+            .story-card{
+                width: 122%;
+            }
+
+            .story-content{
+                top: 28%;
+            }
+
+            .story-intro{
+                font-size: 6.8px;
+            }
+
+            .flow-step{
+                font-size: 5.8px;
+            }
+
+            .story-question,
+            .story-next{
+                font-size: 6.8px;
+            }
+
             .home-button a{
                 padding: 9px 16px;
 
                 font-size: 17px;
             }
         }
-
     </style>
 </head>
 
@@ -410,88 +658,151 @@
     <div class="home-button">
 
         <a href="booth.html">
-            ➔이전으로
+            ➔ 이전으로
         </a>
 
     </div>
 
 
     <h1>
-        🥩 잿더미 숲테이크 🥩 & 🍝 파릇파릇 바질 숲파게티 🍝
+        🥩 잿더미 숲테이크 🥩 &amp;
+        🍝 파릇파릇 바질 숲파게티 🍝
     </h1>
 
 
-    <main class="experience-container">
+    <main class="page-container">
 
-        <!-- 왼쪽: 잿더미 숲테이크 -->
-        <section class="experience-box ash-box">
+        <!-- 본식 1 -->
+        <section class="course-box ash-box">
 
             <h2>
                 🥩 잿더미 숲테이크 🥩
             </h2>
 
+            <div class="experience-list">
 
-            <div class="experience-item">
+                <!-- 타버린 흙 -->
+                <article class="experience-item">
 
-                <div class="experience-visual">
+                    <div class="experience-visual">
 
-                    <div class="activity-tag">
-                      🟫  타버린 흙 🟫
+                        <div class="activity-tag">
+                            🟫 타버린 흙
+                        </div>
+
+                        <img
+                            src="ash1.png"
+                            alt="잿더미 숲테이크 체험 1"
+                        >
+
                     </div>
 
-                    <img
-                        src="ash1.png"
-                        alt="잿더미 숲테이크 체험 1"
-                    >
+                    <p>
+                        산불로 인해 타버린 흙 2종류의 촉감을 직접 만져 느껴보세요! 타버린 흙은 영양분이 없어 식물들이 살기 촉박한 환경이 됩니다.
+                    </p>
 
-                </div>
+                </article>
 
-                <p>
-                    산불로 인해 타버린 흙 2종류의 촉감을 직접 만져 느껴보세요! 타버린 흙은 영양분이 없어 식물들이 살기 촉박한 환경이 됩니다.
-                </p>
+
+                <!-- 타버린 나뭇가지 -->
+                <article class="experience-item">
+
+                    <div class="experience-visual">
+
+                        <div class="activity-tag">
+                            🪵 타버린 나뭇가지
+                        </div>
+
+                        <img
+                            src="ash2.png"
+                            alt="잿더미 숲테이크 체험 2"
+                        >
+
+                    </div>
+
+                    <p>
+                        산불로 인해 타버린 나뭇가지의 촉감을 직접 만져 느껴보세요! 나무 탄 내도 느낄 수 있어요! 불에 탄 나무는 언제 쓰러질지 몰라 위험하답니다.
+                    </p>
+
+                </article>
+
+
+                <!-- 숲속 생명의 무덤 -->
+                <article class="experience-item">
+
+                    <div class="experience-visual">
+
+                        <div class="activity-tag">
+                            🪦 숲속 생명의 무덤
+                        </div>
+
+                        <img
+                            src="ash3.png"
+                            alt="잿더미 숲테이크 체험 3"
+                        >
+
+                    </div>
+
+                    <p>
+                        산불로 인해 죽은 동식물들의 무덤입니다. 무덤을 열어보세요! 산불로 인해 죽은 동식물 사진을 확인해볼 수 있어요! 울진, 동해 대형산불로 인해 많은 천연기념물인 산양이 죽었고, 금강소나무 등 많은 토종 식물이 죽었답니다.
+                    </p>
+
+                </article>
 
             </div>
 
+        </section>
+                <!-- 본식 1과 본식 2 사이 우푸 설명 -->
+        <section class="story-card">
 
-            <div class="experience-item">
+            <img
+                src="tree-woopu.png"
+                alt="산불과 건강한 숲 사이에서 설명하는 우푸"
+                class="story-image"
+            >
 
-                <div class="experience-visual">
+            <div class="story-content">
 
-                    <div class="activity-tag">
-                        🪵 타버린 나뭇가지 🪵
-                    </div>
-
-                    <img
-                        src="ash2.png"
-                        alt="잿더미 숲테이크 체험 2"
-                    >
-
-                </div>
-
-                <p>
-                    산불로 인해 타버린 나뭇가지의 촉감을 직접 만져 느껴보세요! 나무 탄 내도 느낄 수 있어요! 불에 탄 나무는 언제 쓰러질지 몰라 위험하답니다.
+                <p class="story-intro">
+                    방금 보신 타버린 흙과 나무, 무덤 속 동식물.. <br>
+                    이들이 사라진 건 단순히 마음 아픈 일로 끝나지 않아요.
                 </p>
 
-            </div>
+                <div class="story-flow">
 
+                    <div class="flow-step">
+                        🌲 숲이 타버리면
 
-            <div class="experience-item">
-
-                <div class="experience-visual">
-
-                    <div class="activity-tag">
-                        🪦 숲속 생명의 무덤 🪦
+                        <span>
+                            저장돼 있던 탄소가 대기로 방출됩니다. 🌲
+                        </span>
                     </div>
 
-                    <img
-                        src="ash3.png"
-                        alt="잿더미 숲테이크 체험 3"
-                    >
+                    <div class="flow-arrow">
+                        ↓
+                    </div>
+
+                    <div class="flow-step">
+                        🌍 기후위기가 심해지고 🌍
+                    </div>
+
+                    <div class="flow-arrow">
+                        ↓
+                    </div>
+
+                    <div class="flow-step">
+                        🔥 더 큰 산불이 발생하게 됩니다. 🔥
+                    </div>
 
                 </div>
 
-                <p>
-                    산불로 인해 죽은 동식물들의 무덤입니다. 무덤을 열어보세요! 산불로 인해 죽은 동식물 사진을 확인해볼 수 있어요! 울진, 동해 대형산불로 인해 많은 천연기념물인 산양이 죽었고, 금강소나무 등 많은 토종 식물이 죽었답니다.
+                <p class="story-question" style="margin-top:45px;">
+                    🔑 이 악순환을 끊어낼 열쇠,<br>
+                    어디에 있을까요? 🔑
+                </p>
+
+                <p class="story-next">
+                    🍝 두 번째 본식을 공개합니다! 🍝
                 </p>
 
             </div>
@@ -499,76 +810,82 @@
         </section>
 
 
-        <!-- 오른쪽: 파릇파릇 바질 숲파게티 -->
-        <section class="experience-box green-box">
+        <!-- 본식 2 -->
+        <section class="course-box green-box">
 
             <h2>
                 🍝 파릇파릇 바질 숲파게티 🍝
             </h2>
 
+            <div class="experience-list">
 
-            <div class="experience-item">
+                <!-- 시원한 숲 그늘 -->
+                <article class="experience-item">
 
-                <div class="experience-visual">
+                    <div class="experience-visual">
 
-                    <div class="activity-tag">
-                        🌳 시원한 숲 그늘 🌳
+                        <div class="activity-tag">
+                            🌳 시원한 숲 그늘
+                        </div>
+
+                        <img
+                            src="green1.png"
+                            alt="바질 숲파게티 체험 1"
+                        >
+
                     </div>
 
-                    <img
-                        src="green1.png"
-                        alt="바질 숲파게티 체험 1"
-                    >
+                    <p>
+                        숲이 주는 시원함을 느껴보세요! 울창한 나무 그늘은 땅과 사람에게 닿는 태양열을 줄여 줍니다. 그리고 뿌리로 흡수한 물을 잎에서 수증기로 방출하는 ‘증산작용’이 일어나는데, 이때 주변의 열을 흡수해 공기가 시원해집니다.
+                    </p>
 
-                </div>
-
-                <p>
-                    숲이 주는 시원함을 느껴보세요! 울창한 나무 그늘은 땅과 사람에게 닿는 태양열을 줄여 줍니다. 그리고 뿌리로 흡수한 물을 잎에서 수증기로 방출하는 ‘증산작용’이 일어나는데, 이때 주변의 열을 흡수해 공기가 시원해집니다.
-                </p>
-
-            </div>
+                </article>
 
 
-            <div class="experience-item">
+                <!-- 숲의 먹거리 -->
+                <article class="experience-item">
 
-                <div class="experience-visual">
+                    <div class="experience-visual">
 
-                    <div class="activity-tag">
-                        🍎 맛있는 숲의 먹거리 🍎
+                        <div class="activity-tag">
+                            🍎 맛있는 숲의 먹거리
+                        </div>
+
+                        <img
+                            src="green2.png"
+                            alt="바질 숲파게티 체험 2"
+                        >
+
                     </div>
 
-                    <img
-                        src="green2.png"
-                        alt="바질 숲파게티 체험 2"
-                    >
+                    <p>
+                        숲은 우리에게 풍부한 먹거리를 제공한답니다! 숲에서 채집할 수 있는 식물은 약 7000여 종, 식용 버섯은 약 2100여 종이 있다고 합니다.
+                    </p>
 
-                </div>
-
-                <p>
-                    숲은 우리에게 풍부한 먹거리를 제공한답니다! 숲에서 채집할 수 있는 식물은 약 7000여 종, 식용 버섯은 약 2100여 종이 있다고 합니다.
-                </p>
-
-            </div>
+                </article>
 
 
-            <div class="experience-item">
+                <!-- 숲속 힐링 -->
+                <article class="experience-item">
 
-                <div class="experience-visual">
+                    <div class="experience-visual">
 
-                    <div class="activity-tag">
-                        🐿️ 동식물과 함께하는 힐링의 공간 🐿️
+                        <div class="activity-tag">
+                            🐿️ 동식물과 함께하는 힐링의 공간
+                        </div>
+
+                        <img
+                            src="green3.png"
+                            alt="바질 숲파게티 체험 3"
+                        >
+
                     </div>
 
-                    <img
-                        src="green3.png"
-                        alt="바질 숲파게티 체험 3"
-                    >
+                    <p>
+                        숲은 동식물과 함께하는 힐링의 공간입니다. 푸른 풍경과 자연의 소리는 지친 뇌에 휴식을 주고, 숲속을 걷는 동안 스트레스 호르몬과 몸의 긴장이 줄어듭니다. 숲은 우리의 불안과 피로를 덜어 주고 몸과 마음이 다시 안정을 찾도록 도와줍니다.
+                    </p>
 
-                </div>
-
-                <p>
-                    숲은 동식물과 함께하는 힐링의 공간입니다. 푸른 풍경과 자연의 소리는 지친 뇌에 휴식을 주고, 숲속을 걷는 동안 스트레스 호르몬과 몸의 긴장이 줄어듭니다. 숲은 우리의 불안과 피로를 덜어 주고 몸과 마음이 다시 안정을 찾도록 도와줍니다.
-                </p>
+                </article>
 
             </div>
 
