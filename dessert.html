@@ -93,7 +93,7 @@
             align-items: center;
 
             width: 100%;
-            height: 590px;
+            height: 750px;
 
             overflow: hidden;
         }
@@ -423,6 +423,104 @@
 
     color: #243124;
 }
+.receipt-form{
+    position: relative;
+
+    width: min(520px, 100%);
+    margin: 0 auto;
+}
+
+.receipt-image{
+    width: 100%;
+    height: auto;
+
+    display: block;
+}
+
+.receipt-input{
+    position: absolute;
+
+    left: 20%;
+
+    width: 68%;
+    height: 38px;
+
+    border: none;
+    border-bottom: 2px dashed #69A94B;
+
+    background: rgba(255, 255, 255, 0.72);
+
+    font-family: "Poor Story", cursive;
+    font-size: 20px;
+    color: #2E5C32;
+
+    padding: 4px 10px;
+    outline: none;
+}
+
+.receipt-input:focus{
+    background: rgba(236, 255, 224, 0.92);
+    border-bottom: 3px solid #69A94B;
+}
+.input-1{
+    top: 40%;
+}
+
+.input-2{
+    top: 46%;
+}
+
+.input-3{
+    top: 52%;
+}
+
+.input-4{
+    top: 58%;
+}
+
+.input-5{
+    top: 64%;
+}
+.receipt-save-button{
+    position: absolute;
+
+    left: 50%;
+    bottom: 4%;
+
+    transform: translateX(-50%);
+
+    padding: 12px 28px;
+
+    border: none;
+    border-radius: 30px;
+
+    background: #8BD067;
+    color: white;
+
+    font-family: "Poor Story", cursive;
+    font-size: 20px;
+
+    cursor: pointer;
+
+    box-shadow: 0 7px 16px rgba(0, 0, 0, 0.15);
+}
+
+.receipt-save-button:hover{
+    transform: translateX(-50%) translateY(-4px);
+}
+@media (max-width: 600px){
+
+    .receipt-input{
+        font-size: 16px;
+        height: 32px;
+    }
+
+    .receipt-save-button{
+        font-size: 17px;
+        padding: 10px 20px;
+    }
+
+}
     </style>
 </head>
 
@@ -464,12 +562,55 @@
 
                 <div class="receipt-content">
 
-                    <p class="receipt-guide">
-                        오늘 실천하고 싶은 행동을 골라<br>
-                        영수증에 작성해보세요!
-                    </p>
+    <div class="receipt-form">
 
-                </div>
+        <img
+            src="dessert-receipt.png"
+            alt="나의 실천 영수증"
+            class="receipt-image"
+        >
+
+        <input
+            type="text"
+            class="receipt-input input-1"
+            placeholder="메뉴판의 내용을"
+        >
+
+        <input
+            type="text"
+            class="receipt-input input-2"
+            placeholder="보고 실천할 한 가지를"
+        >
+
+        <input
+            type="text"
+            class="receipt-input input-3"
+            placeholder="골라 영수증에"
+        >
+
+        <input
+            type="text"
+            class="receipt-input input-4"
+            placeholder="작성해주세요!"
+        >
+
+        <input
+            type="text"
+            class="receipt-input input-5"
+            placeholder="그리고 함께 실천해요!"
+        >
+
+        <button
+            type="button"
+            class="receipt-save-button"
+            onclick="saveReceipt()"
+        >
+            실천 저장하기 🌿
+        </button>
+
+    </div>
+
+</div>
 
             </section>
 
@@ -520,7 +661,48 @@
         </a>
 
     </div>
+<script>
+const receiptInputs =
+    document.querySelectorAll(".receipt-input");
 
+function saveReceipt(){
+
+    const values = [];
+
+    receiptInputs.forEach(function(input){
+        values.push(input.value);
+    });
+
+    localStorage.setItem(
+        "misupReceipt",
+        JSON.stringify(values)
+    );
+
+    alert("실천 영수증이 저장되었습니다! 🌿");
+}
+
+function loadReceipt(){
+
+    const saved =
+        localStorage.getItem("misupReceipt");
+
+    if(!saved){
+        return;
+    }
+
+    const values = JSON.parse(saved);
+
+    receiptInputs.forEach(function(input, index){
+
+        if(values[index]){
+            input.value = values[index];
+        }
+
+    });
+}
+
+loadReceipt();
+</script>
 </body>
 
 </html>
